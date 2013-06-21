@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login Title</title>
+		<link rel="stylesheet" href="../static/lib/css/normalize.css">
+		<link rel="stylesheet" href="../static/css/index.css">
+
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../static/lib/js/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="start-page">
+			<header class="header">
+				<div class="grid-980 clearfix">
+					<div class="logo">
+						<img src="../static/img/logo.png" alt="logo">
+					</div>
+					<ul class="about">
+						<li>
+							<a href="" class="active">首页</a>
+						</li>
+						<li>
+							<a href="">如何使用</a>
+						</li>
+						<li>
+							<a href="">成功案例</a>
+						</li>
+						<li>
+							<a href="">常见问题</a>
+						</li>
+						{% if user %}
+						<li class="access">
+							<a href="/value">立即使用</a>
+						</li>
+						{% else %}
+						<li class="access">
+							<a href="/oauth">登录</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+			</header>
+			<div class="banner">
+				<!-- <div class="grid-980 login-frame">
+				<div class="login-box">
+				<div class="login-title">
+				<h3>登录云客CRM</h3>
+				</div>
+				<form action="/login" post="POST">
+				<div class="login-item">
+				<label for="" class="login-label">账户名：</label>
+				<input id="" class="login-text" type="text" name="">
+				</div>
+				<div class="login-item">
+				<label for="" class="login-label">登录密码：</label>
+				<span class="forget-pwd">
+				<a href="#">忘记密码？</a>
+				</span>
+				<input id="" class="login-text" type="password" name="">
+				</div> <div class="login-item-submit">
+				<input class="login-submit" type="submit" value="登录">
+				</div>
+				<div class="login-item">
+				<a class="login-btn" href="#">还没有账号？立马注册！</a>
+				</div>
+				</form>
+				</div>
+				</div> -->
+				<ul class="slider">
+					<li class="show-opacity" style="background-image:url(../static/img/F4kmswRET.jpg);"></li>
+					<li class="hide-opacity" style="background-image:url(../static/img/F4knlsGmb.jpg);"></li>
+					<li class="hide-opacity" style="background-image:url(../static/img/F4knLnqWL.jpg);"></li>
+					<li class="hide-opacity" style="background-image:url(../static/img/F4knYpIhB.jpg);"></li>
+				</ul>
+				<div class="slider-number-box">
+					<div class="slider-number">
+						<a class="active" href="#">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+					</div>
+				</div>
+			</div>
+			<div class="contact">
+				<div class="grid-980 clearfix">
+					<ul>
+						<li>
+							<a href="#">阿里旺旺</a>
+						</li>
+						<li>
+							<a href="#">客服邮箱</a>
+						</li>
+						<li>
+							<a href="#">微信二维码</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="toggle">
+			<footer class="footer">
+				<p>
+					ＴＡOＢＯ ABC 
+				</p>
+			</footer>
+			<div class="btn down">
+				Do What?
+				<i class="icon"></i>
+			</div>
+			<div class="btn up hidden">
+				Starting...
+				<i class="icon"></i>
+			</div>
+		</div>
+		<div id="intro" class="hidden">
+			<div class="grid-980 clearfix">
+				<h3 class="intro-title">告诉你...</h3>
+				<table>
+					<tbody>
+						<tr>
+							<td width="25%">
+							<div class="intro-content">
+								<h3>特性一</h3>
+								<p>
+									淘宝上连衣裙的搜索趋势是怎样的？
+								</p>
+								<p>
+									<b>任一关键词（如商品、行业、事件等）的搜索和成交走势。</b>
+								</p>
+							</div></td>
+							<td width="25%">
+							<div class="intro-content">
+								<h3>特性二</h3>
+								<p>
+									淘宝上搜索、购买iPhone4的都是什么样的人？
+								</p>
+								<p>
+									用淘宝指数查看不同商品的<b>消费人群特征</b>。
+								</p>
+							</div></td>
+							<td width="25%">
+							<div class="intro-content">
+								<h3>特性三</h3>
+								<p>
+									最近7天淘宝最火的搜索词、行业和品牌是？
+								</p>
+								<p>
+									基于淘宝搜索和成交的排行榜，宏观数据清晰呈现。
+								</p>
+							</div></td>
+							<td width="25%" class="last">
+							<div class="intro-content">
+								<h3>特性四</h3>
+								<p>
+									北京女白领和20岁大学生都买过什么面膜？
+								</p>
+								<p>
+									淘宝指数告诉你<b>不同标签的人买过什么商品</b>。
+								</p>
+							</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<ul></ul>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../static/js/index.js"></script>
+	</body>
+</html>

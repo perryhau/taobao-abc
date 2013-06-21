@@ -1,0 +1,131 @@
+/* 内容样式 */
+.main-content .overflow {
+    position: relative;
+    width: 100%;
+    overflow: hidden
+}
+
+.main-content .inner {
+    width: 200%
+}
+
+    .chart-content,
+    .list-content {
+        position: relative;
+        float: left;
+        width: 50%
+    }
+
+        .main-content .content-title .content-tips {
+            float: left;
+            padding-left: 10px
+        }
+
+            .main-content .content-title span a {
+                vertical-align: baseline
+            }
+
+        .main-content .btn-back {
+            position: absolute;
+            top: 20px;
+            right: 10px
+        }
+
+/* 树图样式 */
+.value-chart {
+    width: 100%;
+    height: 450px
+}
+    
+    .bp-item {
+        text-align: center
+    }
+
+    .bp-item:hover {
+        cursor: pointer
+    }
+
+    .bp-roof-title-frame {
+        top: 2px;
+        left: 2px;
+        width: 195px;
+        height: 20px
+    }
+
+    .bp-item-title-frame {
+        top: 2px;
+        left: 2px;
+        width: 86px;
+        height: 20px
+    }
+
+    .bp-roof-title {
+        top: 3px;
+        left: 6px;
+        width: 188px;
+        height: 18px
+    }
+
+    .bp-item-title {
+        top: 3px;
+        left: 6px;
+        width: 73px;
+        height: 18px
+    }
+
+    .bp-roof-num {
+        top: 30px;
+        left: 6px;
+        width: 188px;
+        height: 25px;
+        font-size: 30px;
+        line-height: 25px
+    }
+
+    .bp-item-num {
+        top: 30px;
+        left: 6px;
+        width: 78px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 25px
+    }
+
+    .bp-item-desc {
+        top: 60px;
+        left: 6px;
+        width: 78px;
+        height: 35px;
+        font-size: 13px;
+        line-height: 15px
+    }
+
+/* 列表样式 */
+
+.client-list {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 80%
+}
+
+    .client-list .aliwangwang {
+        margin-left: 5px
+    }
+    
+/* 分页样式 */
+
+/* 自定义表单样式 */
+
+.modal button.close {
+    font-size: 30px;
+    color: #fff;
+}
+
+.update-group {
+    margin: 20px 30px
+}
+        
+    .update-group p span,
+    .update-group p b {
+        font-size: 18px
+    }

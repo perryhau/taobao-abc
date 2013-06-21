@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<head>
+
+	<title>忠诚度分析</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap-responsive.min.css">-->
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootswatch.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/yunke.css">
+	<style type="text/css">
+		.keyword-item {
+			margin: 3px;
+		}
+		#keyword-box {
+			padding-left: 40px;
+			border-left: 1px dashed #ccc;
+		}
+		#keyword-list {
+			min-height: 200px;
+		}
+		.well {
+			overflow: hidden;
+			zoom: 1;
+			border: 1px solid rgba(0,0,0,0.05);
+		}
+		#add-keyword {
+			text-align: right;
+			padding-right: 50px;
+		}
+		#loyal, #disloyal, #lose {
+			padding-right: 10px;
+			font-size: 1.5em;
+		}
+		#stat {
+			margin: 35px 0;
+		}
+		.badge {
+			padding: 10px 20px;
+			font-size: 1.5em;
+		}
+		.breadcrumb {
+			margin: 10px 0;
+		}
+		.detail-table {
+			margin-bottom: 21px;
+		}
+		#alert {
+			position: fixed;
+			z-index: 1000;
+			width: 100%;
+			margin-top: 10px;
+		}
+		#alert .alert {
+			width: 61.8%;
+			margin: 0 auto;
+		}
+		.alertMsg {
+			margin: 5px 0;
+			text-align: center;
+			font-size: 24px;
+		}
+		.keyword {
+			color: #FFF;
+		}
+		.keyword:hover {
+			color: #FFF;
+		}
+	</style>
+</head>
+<body class="preview">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">ＴＡOＢＯ ABC</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">你的账户<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/logout">注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+
+		{% include "layouts/nav.html" %}
+
+		<div class="main-wrap">
+			<div class="main-content">
+				<div class="row">
+					<div class="span12">
+						<h4 class="head">我关注的商品关键词标签</h4>
+						<div class="well">
+							<div class="span4">
+								<h4>云客为您找到了</h4>
+								<div id="stat">
+									<p>
+										<span id="loyal"></span>个忠诚客户
+									</p>
+									<p>
+										<span id="disloyal"></span>个摇摆客户
+									</p>
+								</div>
+								<p>
+									其中&nbsp;摇摆客户在竞争对手</br>店中成交金额总计：
+								</p>
+								<span id="lose"></span>元
+							</div>
+							<div class="span7">
+								<div class="span6" id="keyword-box">
+									<div id="keyword-list">
+										<!--
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">男鞋</a></button>
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">男裤</a></button>
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">男袜</a></button>
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">皮带</a></button>
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">眼睛</a></button>
+										<button class="alert alert-info keyword-item"><a class="close">x</a><a class="keyword" href="#">内裤</a></button>
+										-->
+									</div>
+									<div id="add-keyword">
+										<input type="text" class="input-medium search-query" id="input-keyword" placeholder="商品关键词">
+										<button type="submit" class="btn btn-primary" id="btn-add-keyword">
+											贴上
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12" id="loyalty-tables">
+						<h4 class="head">我的顾客买过哪些竞争商品</h4>
+						<!--
+						<div class="detail-table">
+						<h5 id="table1" class="breadcrumb">男鞋</h5>
+						<table class="table table-bordered">
+						<tr>
+						<th>我的顾客</th>
+						<th>竞品成交数量</th>
+						<th>本店成交数量</th>
+						<th>本店数量占比</th>
+						<th>竞品成交金额</th>
+						<th>本店成交金额</th>
+						<th>本店金额占比</th>
+						</tr>
+						</table>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript" src="../static/lib/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/js/l.js"></script>
+<script type="text/javascript" src="../static/js/common.js"></script>

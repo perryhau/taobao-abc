@@ -1,0 +1,101 @@
+/* 全局调用样式 */
+.container,
+.navbar-fixed-top .container {
+    width: 1170px
+}
+
+/* body样式 */
+.preview {
+    padding-top: 51px;
+    font-family: "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+
+/* 侧边导航栏样式 */
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 100px;
+    width: 175px;
+    height:100%;
+    background-color: #f7f7f7;
+    border-right: 1px solid #dae3e9;
+    border-left: 1px solid  #dae3e9;
+    z-index: 100
+}
+
+    .sidebar-nav ul {
+        list-style: none;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 0
+    }
+
+        .sidebar-nav ul li a.active {
+            font-weight: bold;
+            color: #33455a
+        }
+
+        .sidebar-nav ul li a {
+            display: block;
+            margin-right: -15px;
+            margin-left: -15px;
+            padding: 19px 14px 15px 14px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #dae1e8;
+            box-shadow: 0 2px 1px -1px #FFFFFF;
+            color: #7f8c9a;
+            width: 84%
+        }
+
+            .sidebar-nav ul li a:hover {
+                color: #33455a;
+                text-decoration: none
+            }
+
+/* 内容框样式 */
+
+.main-content {
+    margin-left: 175px;
+    padding: 15px 0 0 20px
+}
+
+    .main-content .content-title {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        _zoom: 1;
+    }
+
+        .main-content .content-title h3 {
+            float: left;
+            margin: 0
+        } 
+
+        .main-content .content-title span {
+            display: inline-block;
+            margin-top: 10px;
+            line-height: 35px;
+            font-size: 13px;
+            font-weight: normal;
+            color: #666
+        }
+
+/* 标题样式 */
+.head{
+    border-bottom: 1px solid #ddd;
+    line-height: 42px;
+}
+
+/* 表格样式 */
+.table th, .table td{
+    text-align: center;
+}   
+
+.well{
+    overflow: hidden;
+    zoom: 1;
+}
+
+.row{
+    *display: inline;/*margin-left在ie7下产生了双倍间距，这一句修复此hack*/
+}
+

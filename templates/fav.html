@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<head>
+	<title>偏好分析</title>
+	<!--	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap-responsive.min.css">-->
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootswatch.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/yunke.css">
+	<!--<script type="text/javascript" src="../../static/lib/flatly/js/bootstrap.min.js"></script>-->
+	<style type="text/css">
+		.form-search {
+			margin: 0;
+		}
+		#search-count, #dig-count {
+			line-height: 36px;
+		}
+		#pager {
+			text-align: center;
+		}
+	</style>
+</head>
+<body class="preview">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">123</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">你的账户<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/logout">注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+
+		{% include "layouts/nav.html" %}
+
+		<div class="main-wrap">
+			<div class="main-content">
+				<div class="row">
+					<div class="span12">
+						<div class="well">
+							<div class="span6">
+								<input type="text" class="input-medium search-query" id="input-nick">
+								<button class="btn btn-success" id="btn-query">
+									查询
+								</button>
+								<button class="btn btn-info" id="btn-dig">
+									fuck
+								</button>
+							</div>
+							<!--<div class="span5">
+							已查过<span id="search-count"></span>1122次，挖过<span id="dig-count">345</span>次
+							</div>-->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12">
+						<h4 class="head"> 购买类目/品牌偏好 </h4>
+						<table class="table table-bordered" id="table-brand">
+							<thead>
+								<tr>
+									<th>类目</th>
+									<th>品牌</th>
+									<th>次数</th>
+									<th>卖家</th>
+									<th>商品</th>
+									<th>价格</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+						<div id="pager" class="pagination needTextCenter"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../static/lib/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/lib/js/ibbd-class.js"></script>
+<script type="text/javascript" src="../static/lib/js/jquery.pager.js"></script>
+<script type="text/javascript" src="../static/js/fav.js"></script>
+<script type="text/javascript" src="../static/js/common.js"></script>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>客户价值分析</title>
+
+		<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/lib/jquery-ui/css/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/lib/primitives/css/primitives.latest.css">
+		<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/yunke.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/v.css">
+
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../static/lib/js/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="preview">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">ＴＡOＢＯ ABC</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav pull-right">
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">你的账户<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="/logout">注销</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			{% include "layouts/nav.html" %}
+			<div class="main-wrap">
+				<div class="main-content">
+					<div class="overflow">
+						<div class="inner">
+							<div id="chart-content" class="chart-content">
+								<div class="content-title">
+									<h3>价值分析</h3>
+									<span class="content-tips"> 提示：点击图标查看客户列表 </span>
+									<span class="pull-right"> 分类方法不合适？您也可以 <a href="#update-form" role="button" class="btn btn-small btn-success" data-toggle="modal">自定义分类条件</a> </span>
+								</div>
+								<div id="value-chart" class="value-chart"></div>
+							</div>
+							<div id="list-content" class="list-content">
+								<div class="content-title">
+									<h3></h3>
+								</div>
+								<div class="client-list">
+									<table class="table table-bordered table-striped table-hover">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>买家<img class="aliwangwang" src="../static/img/aliwangwang.gif" alt="买家旺旺"></th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td><a href="">买家1</a></td>
+												<td><a href="">查看交易行为</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="page-list">
+									<div class="pagination">
+										<ul>
+											<li class="disabled">
+												<a href="#">&larr;</a>
+											</li>
+											<li class="active">
+												<a href="#">1</a>
+											</li>
+											<li>
+												<a href="#">2</a>
+											</li>
+											<li>
+												<a href="#">3</a>
+											</li>
+											<li>
+												<a href="#">4</a>
+											</li>
+											<li>
+												<a href="#">5</a>
+											</li>
+											<li>
+												<a href="#">6</a>
+											</li>
+											<li>
+												<a href="#">7</a>
+											</li>
+											<li>
+												<a href="#">8</a>
+											</li>
+											<li>
+												<a href="#">9</a>
+											</li>
+											<li>
+												<a href="#">10</a>
+											</li>
+											<li>
+												<a href="#">&rarr;</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="update-form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					×
+				</button>
+				<h4 id="myModalLabel">自定义分类条件</h4>
+			</div>
+			<div class="modal-body">
+				<div class="update-group">
+					<p>
+						<span>购买次数：</span>
+						<b id="buy-times"></b>
+					</p>
+					<div id="buy-times-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>新顾客最近一次购买时间（天）：</span>
+						<b id="new-latest-time"></b>
+					</p>
+					<div id="new-latest-time-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>老顾客最近一次购买时间（天）：</span>
+						<b id="old-latest-time"></b>
+					</p>
+					<div id="old-latest-time-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>活跃新顾客消费额（元）：</span>
+						<b id="new-active-consumption"></b>
+					</p>
+					<div id="new-active-consumption-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>睡眠顾客消费额（元）：</span>
+						<b id="new-sleep-consumption"></b>
+					</p>
+					<div id="new-sleep-consumption-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>活跃老顾客消费额（元）：</span>
+						<b id="old-active-consumption"></b>
+					</p>
+					<div id="old-active-consumption-slider"></div>
+				</div>
+				<div class="update-group">
+					<p>
+						<span>睡眠回头客消费额（元）：</span>
+						<b id="old-sleep-consumption"></b>
+					</p>
+					<div id="old-sleep-consumption-slider"></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="reset-condition" class="btn btn-warning">
+					重置
+				</button>
+				<button id="update-condition" class="btn btn-success">
+					更新
+				</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../static/lib/js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../static/lib/jquery-ui/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../static/lib/flatly/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../static/lib/primitives/js/primitives.min.js"></script>
+		<script type="text/javascript" src="../static/js/v.js"></script>
+	</body>
+</html>

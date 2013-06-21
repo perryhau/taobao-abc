@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<head>
+	<title>交易行为分析</title>
+<!--	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap-responsive.min.css">-->
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/bootswatch.css">
+	<link rel="stylesheet" type="text/css" href="../static/lib/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../static/lib/fuelux/css/fuelux.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/lib/flatly/css/yunke.css">
+	<!--<script type="text/javascript" src="../../static/lib/flatly/js/bootstrap.min.js"></script>-->
+	<style type="text/css">
+		.form-search{
+			margin: 0;
+		}
+		#search-count, #dig-count{
+			line-height: 36px;
+		}
+	</style>
+</head>
+<body class="preview">
+	<div class="navbar navbar-fixed-top">
+       <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">TABO ABC</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">你的账户<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/logout">注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    	
+        {% include "layouts/nav.html" %}
+        
+        <div class="main-wrap">
+            <div class="main-content">
+                <div class="row">
+                    <div class="span12">
+                        <div class="well">
+                            <div class="span6">
+                                    <input type="text" class="input-medium search-query" id="input-nick" value="{{nick or ''}}">
+                                    <button class="btn btn-success" id="btn-query">查询</button>
+                                    <button class="btn btn-info" id="btn-dig">挖一下</button>
+                            </div>
+                            <!--<div class="span5">
+                                    已查过<span id="search-count"></span>1122次，挖过<span id="dig-count">345</span>次
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="row">
+                    <h4 class="span12 head">
+                        TA的信用级别
+                    </h4>
+                    <div class="span4">
+                        <div id="chart-credit" style="height:300px;"></div>
+                    </div>
+                    <div class="span8">
+                        <table class="table table-bordered" id="table-credit">
+                            <tr>
+                                <th>最近一周</th>
+                                <th>最近一月</th>
+                                <th>最近半年</th>
+                                <th>半年以前</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span6">
+                        <h4 class="head">TA在这些店铺消费最多</h4>
+                        <div id="chart-shops" style="height:300px;"></div>
+                    </div>
+                    <div class="span6">
+                        <h4 class="head">TA买过最多的宝贝</h4>
+                        <div id="chart-items" style="height:300px;"></div>
+                    </div>
+                </div>
+                -->
+                <div class="row fuelux">
+                    <div class="span12" style="height:400px">
+                        <table id="table-buy-list" class="table table-bordered datagrid">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <span class="datagrid-header-title">TA详细的交易记录</span>
+                                    <div class="datagrid-header-left">
+                                        <div class="input-append search datagrid-search">
+                                            <input type="text" class="input-medium" placeholder="按宝贝关键词搜索">
+                                            <button class="btn"><i class="icon-search"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="datagrid-header-right">
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>
+                                    <div class="datagrid-footer-left">
+                                        <div class="grid-controls">
+                                            <span>
+                                                <span class="grid-start"></span> -
+                                                <span class="grid-end"></span> 总计
+                                                <span class="grid-count"></span>
+                                            </span>
+                                            <div class="select grid-pagesize" data-resize="auto">
+                                                <button data-toggle="dropdown" class="btn dropdown-toggle">
+                                                    <span class="dropdown-label" id="page-size"></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li data-value="5"><a href="#">5</a></li>
+                                                    <li data-value="10" data-selected="true"><a href="#">10</a></li>
+                                                    <li data-value="20"><a href="#">20</a></li>
+                                                    <li data-value="50"><a href="#">50</a></li>
+                                                    <li data-value="100"><a href="#">100</a></li>
+                                                </ul>
+                                            </div>
+                                            <span>每页</span>
+                                        </div>
+                                    </div>
+                                    <div class="datagrid-footer-right">
+                                        <div class="grid-pager">
+                                            <button type="button" class="btn grid-prevpage"><i class="icon-chevron-left"></i></button>
+                                            <span>页</span>
+                                            <div class="input-append dropdown combobox">
+                                                <input class="span1" type="text" id="page">
+                                                <button class="btn" data-toggle="dropdown"><i class="caret"></i></button>
+                                                <ul class="dropdown-menu"></ul>
+                                            </div>
+                                            <span>共 <span class="grid-pages"></span></span>
+                                            <button type="button" class="btn grid-nextpage"><i class="icon-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../static/lib/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/lib/flatly/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/lib/js/highcharts.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/underscore.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/datagrid_2.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/search_2.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/select_2.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/combobox_2.js"></script>
+<script type="text/javascript" src="../static/lib/fuelux/util_2.js"></script>
+<script type="text/javascript" src="../static/js/cr.js"></script>
+<script type="text/javascript" src="../static/js/common.js"></script>
