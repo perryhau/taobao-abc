@@ -95,20 +95,14 @@ class Model:
 
     @classmethod
     def execute(cls, query, *args):
-        print "execute"
         conn = Model._pool.connection()
-        print "conn :", conn
         cursor = conn.cursor()
-        print "cur :", cursor
-        print args
         try:
             cursor.execute(query, args)
             conn.commit()
-            
         except MySQLdb.Error, e:
-            logging.error("Error MySQL on %s", e.args[1])
             conn.rollback()
-            
+            logging.error("Error MySQL on %s", e.args[1])
         finally:
             cursor.close()
             conn.close()
