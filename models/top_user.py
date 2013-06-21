@@ -94,16 +94,16 @@ class User(Model):
         self.nick = nick
 
     def update_classfify_tree(self, tree):
-        query = "REPLACE INTO customer_classify (nick, classify_tree) VALUES(%s, %s)"
+        query = "REPLACE INTO user_settings (nick, classify_tree) VALUES(%s, %s)"
         Model.execute(query, self.nick, json.dumps(tree))
         
     def get_keywords(self):
-        query = "SELECT keywords FROM customer_classify WHERE nick=%s"
+        query = "SELECT keywords FROM user_settings WHERE nick=%s"
         return Model.fetch_one(query, self.nick).keywords
 
 
     def update_keywords(self, keywords):
-        query = "UPDATE customer_classify SET keywords=%s WHERE nick=%s"
+        query = "UPDATE user_settings SET keywords=%s WHERE nick=%s"
         try:
             Model.execute(query, keywords, self.nick)
             return 1
