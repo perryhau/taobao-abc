@@ -1,1 +1,6 @@
-kjk
+*~
+*.psd
+*.pyc
+.project
+.pydevproject
+.settings/
