@@ -42,8 +42,7 @@ def before_request():
 
 @app.route(r'/')
 def index():
-    user = None
-    return render_template("index.html", user = user)
+    return render_template("index.html", user = g.user)
 
 @app.route(r'/v')
 def v():
