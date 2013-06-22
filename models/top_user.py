@@ -229,8 +229,8 @@ AND buyer_nick IN (%s)""" % (customers)
         Model.execute(query, nick, json.dumps(_tree))
 
     @staticmethod
-    def save_his_oauth(uid, nick, expires_in, access_token):
-        stmt = "INSERT INTO his_oauth(taobao_user_id, taobao_user_nick, \
+    def save_oauth_history(uid, nick, expires_in, access_token):
+        stmt = "INSERT INTO oauth_history(taobao_user_id, taobao_user_nick, \
                 expires_in, access_token) VALUES(%s, %s, %s, %s)"
         try:
             Model.execute(stmt, uid, nick, expires_in, access_token)
