@@ -1,7 +1,7 @@
 taobao-abc
 ==========
 
-a simple flask taobao demo
+a simple flask taobao web app
 
 License
 =========
