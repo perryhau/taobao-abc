@@ -18,5 +18,5 @@ var TAOBAOABC = {
 }
 
 $(function(){
-	CIM.set_active_nav_class();
+	TAOBAOABC.set_active_nav_class();
 }); 	
