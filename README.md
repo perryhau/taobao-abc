@@ -6,4 +6,4 @@ a simple flask taobao demo
 License
 =========
 
-taobao-abc use the [http://www.gnu.org/licenses/gpl.html](GNU General Public License 3).
+taobao-abc use the [GNU General Public License 3](http://www.gnu.org/licenses/gpl.html).
