@@ -222,7 +222,6 @@ class CustomerUpdateTask(Task):
         self.nick = nick
 
     def do_task(self):
-        #update_user_full(self.nick)
         # buyer = Buyer(self.nick)
         # buyer.update_ststc_customer_shop()
         pass
