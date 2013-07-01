@@ -1,7 +1,7 @@
 SET @saved_cs_client = @@character_set_client;
 SET character_set_client = utf8;
 
-DROP DATABASE IF EXISTS tabobao_abc;
+DROP DATABASE IF EXISTS taobao_abc;
 CREATE DATABASE taobao_abc;
 USE taobao_abc;
 
